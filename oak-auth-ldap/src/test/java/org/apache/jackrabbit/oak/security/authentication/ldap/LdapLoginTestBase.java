@@ -294,7 +294,8 @@ public abstract class LdapLoginTestBase extends ExternalLoginTestBase {
             AuthInfo ai = cs.getAuthInfo();
 
             assertEquals(USER_ID, ai.getUserID());
-            assertEquals("val", ai.getAttribute("attr"));
+assertNotNull(ai.getAttribute("attr"));
+assertEquals("val", ai.getAttribute("attr"));
         } finally {
             if (cs != null) {
                 cs.close();
